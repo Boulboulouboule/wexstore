@@ -1,0 +1,30 @@
+{
+  "name" : "wex/store-bundle",
+  "description" : "Wexample base e-commerce bundle",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "Vincent Pierrat",
+    "email" : "vincent.pierrat@gmail.com"
+  }],
+  "keywords" : [
+    "wex sotre bundle"
+  ],
+  "license" : [
+    "MIT"
+  ],
+  "require" : {
+  },
+  "autoload" : {
+    "psr-0" : {
+      "Wex\\StoreBundle" : "Wex/StoreBundle"
+    }
+  },
+  "target-dir" : "Wex/StoreBundle",
+  "repositories" : [{
+  }],
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "0.1-alpha"
+    }
+  }
+}
