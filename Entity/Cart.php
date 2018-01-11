@@ -10,16 +10,20 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\MappedSuperclass
  */
-class Cart
+abstract class Cart
 {
     // Order status
-    const ERROR_PAYMENT = -1;
-    const CANCELED = 0;
-    const INITIALIZED = 1;
-    const WAITING_PAYMENT = 2;
-    const WAITING_VALIDATION = 3;
-    const PAID = 4;
-    const CLOSED = 5;
+    const STATUS_ERROR_PAYMENT = -1;
+    const STATUS_CANCELED = 0;
+    const STATUS_INITIALIZED = 1;
+    const STATUS_WAITING_PAYMENT = 2;
+    const STATUS_WAITING_VALIDATION = 3;
+    const STATUS_PAID = 4;
+    const STATUS_CLOSED = 5;
+
+    // Discount value type
+    const VALUE_TYPE_PERCENT = 'percent';
+    const VALUE_TYPE_EURO = 'euro';
 
     /**
      * @var int
@@ -56,7 +60,7 @@ class Cart
      *
      * @ORM\Column(name="discount_unit", type="string", length=10)
      */
-    private $discountUnit = 'percent';
+    private $discountUnit = self::VALUE_TYPE_PERCENT;
 
     /**
      * @var float
